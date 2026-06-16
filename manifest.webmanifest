@@ -1,0 +1,19 @@
+{
+  "name": "Quixo",
+  "short_name": "Quixo",
+  "description": "Quixo als installierbare Offline-PWA.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#f4efe5",
+  "theme_color": "#12100d",
+  "icons": [
+    {
+      "src": "./icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
