@@ -5,95 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#12100d" />
     <meta name="description" content="Quixo als installierbare Offline-PWA." />
-    <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="stylesheet" href="./styles.css?v=9" />
-    <link rel="icon" href="./icons/icon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="./icons/icon.svg" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/icons/icon.svg" />
     <title>Quixo</title>
   </head>
   <body>
-    <main class="app-shell">
-      <section class="game-panel" aria-label="Quixo Spielfeld">
-        <div class="topbar">
-          <div>
-            <p class="eyebrow">Abstract Strategy</p>
-            <h1>Quixo</h1>
-          </div>
-          <div class="status-card" aria-live="polite">
-            <span class="status-label">Am Zug</span>
-            <span class="player-chip" id="turnChip">X</span>
-          </div>
-        </div>
-
-        <div class="board-wrap">
-          <div class="push-layer" id="pushLayer" aria-hidden="true"></div>
-          <div class="board" id="board" role="grid" aria-label="5 mal 5 Quixo Brett"></div>
-        </div>
-
-        <div class="message-row">
-          <p id="message">Waehle einen Randwuerfel: leer oder dein eigenes Symbol.</p>
-          <button class="text-button" id="rulesButton" type="button">Regeln</button>
-        </div>
-      </section>
-
-      <aside class="side-panel" aria-label="Spielkontrolle">
-        <section class="control-block">
-          <h2>Partie</h2>
-          <div class="mode-switch" aria-label="Spielmodus">
-            <button class="mode-button active" data-mode="2" type="button">2 Spieler</button>
-            <button class="mode-button" data-mode="4" type="button">4 Spieler</button>
-          </div>
-          <div class="score-grid">
-            <div class="score-box player-x">
-              <span>X</span>
-              <strong id="scoreX">0</strong>
-            </div>
-            <div class="score-box player-o">
-              <span>O</span>
-              <strong id="scoreO">0</strong>
-            </div>
-          </div>
-          <div class="button-row">
-            <button id="undoButton" class="icon-button" type="button" aria-label="Zug zuruecknehmen" title="Zug zuruecknehmen">
-              <span aria-hidden="true">↶</span>
-            </button>
-            <button id="resetButton" class="primary-button" type="button">Neue Partie</button>
-          </div>
-        </section>
-
-        <section class="control-block">
-          <h2>Spieler</h2>
-          <div class="ai-grid" id="playerToggles"></div>
-        </section>
-
-        <section class="control-block">
-          <h2>Auswahl</h2>
-          <div class="selection-card" id="selectionCard">
-            <span>Noch kein Wuerfel gewaehlt</span>
-          </div>
-          <div class="owner-choice" id="ownerChoice" hidden></div>
-        </section>
-
-        <section class="control-block moves-block">
-          <h2>Zuege</h2>
-          <ol id="moveList" class="move-list"></ol>
-        </section>
-      </aside>
-    </main>
-
-    <dialog id="rulesDialog" class="rules-dialog">
-      <form method="dialog">
-        <div class="dialog-head">
-          <h2>Quixo Regeln</h2>
-          <button class="icon-button" value="close" aria-label="Schliessen" title="Schliessen">×</button>
-        </div>
-        <p>Waehle am Rand einen neutralen oder eigenen Wuerfel. Er wird immer mit deinem Zeichen nach oben zurueckgelegt.</p>
-        <p>Der Wuerfel wird an einem Ende der unvollstaendigen Reihe eingeschoben. Er darf nicht an der Stelle zurueckgelegt werden, an der er entnommen wurde.</p>
-        <p>Im Vier-Spieler-Modus spielen X1 und X2 gegen O1 und O2. Ein Teamwuerfel darf nur bewegt werden, wenn sein Punkt dem Spieler am Zug zugeordnet ist.</p>
-        <p>Wer eine gegnerische Fuenferreihe schafft, verliert, auch wenn gleichzeitig eine eigene Fuenferreihe entsteht.</p>
-      </form>
-    </dialog>
-
-    <script type="module" src="./app.js?v=9"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

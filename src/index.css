@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
 :root {
   color-scheme: light;
   --ink: #191510;
@@ -484,6 +489,14 @@ h2 {
   gap: 8px;
 }
 
+.ai-row {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(96px, 0.9fr);
+  gap: 8px;
+  align-items: stretch;
+}
+
 .ai-toggle {
   min-height: 42px;
   padding: 8px 10px;
@@ -505,6 +518,24 @@ h2 {
   width: 20px;
   height: 20px;
   accent-color: var(--ink);
+}
+
+.ai-level {
+  min-width: 0;
+  min-height: 42px;
+  padding: 0 8px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--ink);
+  background: #fffdf8;
+  font: inherit;
+  font-weight: 800;
+}
+
+.ai-level:disabled {
+  color: var(--muted);
+  background: #ede0cc;
+  opacity: 0.62;
 }
 
 .selection-card {
@@ -637,4 +668,5 @@ h2 {
   .text-button {
     width: 100%;
   }
+}
 }
